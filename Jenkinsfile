@@ -13,10 +13,16 @@ pipeline {
                 sh 'dotnet test'
             }
         }
-        stage('Test') {
-            agent any
+        stage('Typescript build and Test') {
+            agent {
+                docker { image 'node:14-alpine'}
+            }
             steps {
-                echo 'Testing..'
+                sh 'cd ./DotnetTemplate.Web'
+                sh 'npm install'
+                sh 'npm run build'
+                sh 'npm run lint'
+                sh 'npm t'
             }
         }
         stage('Deploy') {
