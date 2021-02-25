@@ -1,10 +1,12 @@
 pipeline {
-    agent {
-        docker { image 'mcr.microsoft.com/dotnet/sdk:3.1' }
-    }
+    agent none
 
     stages {
-        stage('Build') {
+        stage('Dotnet Build') {
+            agent{
+                docker { image 'mcr.microsoft.com/dotnet/sdk:3.1' }
+                args '-u root:root'
+            }
             steps {
                 sh 'dotnet build'
             }
