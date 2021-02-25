@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent none
     stages {
         stage('Dotnet Build') {
             agent {
@@ -11,11 +11,13 @@ pipeline {
             }
         }
         stage('Test') {
+            agent any
             steps {
                 echo 'Testing..'
             }
         }
         stage('Deploy') {
+            agent any
             steps {
                 echo 'Deploying....'
             }
