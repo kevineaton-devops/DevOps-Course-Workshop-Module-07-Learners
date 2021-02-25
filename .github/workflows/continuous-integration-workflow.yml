@@ -12,4 +12,4 @@ jobs:
     - name: install NPM
       run: cd ./DotnetTemplate.Web && npm install
     - name: Build NPM
-      run: npm run build
+      run: cd ./DotnetTemplate.Web && npm run build
