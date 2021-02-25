@@ -19,7 +19,7 @@ pipeline {
             }
             steps {
                 sh 'cd ./DotnetTemplate.Web'
-                sh 'npm ci'
+                sh 'npm install'
                 sh 'npm run build'
                 sh 'npm run lint'
                 sh 'npm t'
