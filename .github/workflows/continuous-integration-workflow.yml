@@ -10,6 +10,6 @@ jobs:
     - name: build C#
       run: dotnet build
     - name: install NPM
-      run: cd /DotnetTemplate.Web && npm install
+      run: cd ./DotnetTemplate.Web && npm install
     - name: Build NPM
       run: npm run build
