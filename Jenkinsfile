@@ -18,7 +18,8 @@ pipeline {
                 docker { image 'node:14-alpine'}
             }
             steps {
-                sh 'cd ./DotnetTemplate.Web && npm ci'
+                sh 'cd "./DotnetTemplate.Web"'
+                sh 'npm ci'
                 sh 'npm run build'
                 sh 'npm run lint'
                 sh 'npm t'
