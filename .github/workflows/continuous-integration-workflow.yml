@@ -40,7 +40,7 @@ jobs:
         # List of metadata for an image
         labels: # optional
         # List of tags
-        tags: kevineatondevops/dotnettemplate:latest
+        tags: kevineatondevops/dotnettemplate:latest,kevineatondevops/dotnettemplate:${{github.sha}}
         # optional
         # Always attempt to pull a newer version of the image
         pull: # optional, default is false
