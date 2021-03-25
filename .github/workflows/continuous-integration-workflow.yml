@@ -3,7 +3,7 @@ on: [push]                      # Will make the workflow run every time you push
 
 jobs:
   build:
-    name: Build and test
+    name: Build, test and push
     runs-on: ubuntu-latest      # Sets the build environment a machine with the latest Ubuntu installed
     steps:
     - uses: actions/checkout@v2 # Adds a step to checkout the repository code
@@ -19,10 +19,6 @@ jobs:
       run: cd ./DotnetTemplate.Web && npm run lint
     - name: Run typescript tests
       run: cd ./DotnetTemplate.Web && npm t
-  Push:
-    name: Push
-    runs-on: ubuntu-latest
-    steps:
     - name: Login to Docker Hub
       uses: docker/login-action@v1
       with:
